@@ -1,6 +1,5 @@
 var tabla;
 
-//Función que se ejecuta al inicio
 function init(){
 	mostrarform(false);
 	listar();
@@ -9,11 +8,10 @@ function init(){
 	{
 		guardaryeditar(e);	
 	});
-    //$('#mAlmacen').addClass("treeview active");
-   // $('#lmaterias').addClass("active");
+   
 }
 
-//Función limpiar
+
 function limpiar()
 {
 	$("#idmateria").val("");
@@ -21,7 +19,6 @@ function limpiar()
 	$("#descripcion").val("");
 }
 
-//Función mostrar formulario
 function mostrarform(flag)
 {
 	limpiar();
@@ -40,27 +37,23 @@ function mostrarform(flag)
 	}
 }
 
-//Función cancelarform
+
 function cancelarform()
 {
 	limpiar();
 	mostrarform(false);
 }
 
-//Función Listar
+
 function listar()
 {
 	tabla=$('#tbllistado').dataTable(
 	{
-		"lengthMenu": [ 5, 10, 25, 75, 100],//mostramos el menú de registros a revisar
-		"aProcessing": true,//Activamos el procesamiento del datatables
-	    "aServerSide": true,//Paginación y filtrado realizados por el servidor
-	    dom: '<Bl<f>rtip>',//Definimos los elementos del control de tabla
+		"lengthMenu": [ 5, 10, 25, 75, 100],
+		"aProcessing": true,
+	    "aServerSide": true,
+	    dom: '<Bl<f>rtip>',
 	    buttons: [		          
-		            'copyHtml5',
-		            'excelHtml5',
-		            'csvHtml5',
-		            'pdf'
 		        ],
 		"ajax":
 				{

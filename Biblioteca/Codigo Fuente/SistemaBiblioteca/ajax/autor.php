@@ -77,12 +77,5 @@ switch ($_GET["op"]){
 
 	break;
 }
-//Fin de las validaciones de acceso
-//}
-//else
-//{
- // require 'noacceso.php';
-//}
-//}
-//ob_end_flush();
+
 ?>

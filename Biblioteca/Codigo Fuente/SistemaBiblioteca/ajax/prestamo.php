@@ -31,13 +31,13 @@ switch ($_GET["op"]){
 
 	case 'mostrar':
 		$rspta=$prestamo->mostrar($idprestamo);
- 		//Codificar el resultado utilizando json
+ 	
  		echo json_encode($rspta);
 	break;
 
 	case 'listar':
 		$rspta=$prestamo->listar();
- 		//Vamos a declarar un array
+ 		
  		$data= Array();
 
  		while ($reg=$rspta->fetch_object()){
@@ -86,12 +86,5 @@ switch ($_GET["op"]){
 
 
 }
-//Fin de las validaciones de acceso
-//}
-//else
-//{
- // require 'noacceso.php';
-//}
-//}
-//ob_end_flush();
+
 ?>
