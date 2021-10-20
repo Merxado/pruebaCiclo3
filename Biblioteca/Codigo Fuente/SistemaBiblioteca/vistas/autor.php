@@ -13,7 +13,6 @@ else
 require 'header.php';
 ?>
 <!--Contenido-->
-      <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">        
         <!-- Main content -->
         <section class="content">
@@ -25,7 +24,6 @@ require 'header.php';
                         <div class="box-tools pull-right">
                         </div>
                     </div>
-                    <!-- /.box-header -->
                     <!-- centro -->
                     <div class="panel-body table-responsive" id="listadoregistros">
                         <table id="tbllistado" class="table table-striped table-bordered table-condensed table-hover">
@@ -63,14 +61,14 @@ require 'header.php';
                           </div>
                         </form>
                     </div>
-                    <!--Fin centro -->
-                  </div><!-- /.box -->
-              </div><!-- /.col -->
-          </div><!-- /.row -->
-      </section><!-- /.content -->
+                   
+                  </div>
+              </div>
+          </div>
+      </section>
 
-    </div><!-- /.content-wrapper -->
-  <!--Fin-Contenido-->
+    </div>
+  
 <?php
 
 require 'footer.php';

@@ -80,15 +80,15 @@ function listar()
 {
 	tabla=$('#tbllistado').dataTable(
 	{
-		"lengthMenu": [ 5, 10, 25, 75, 100],//mostramos el menú de registros a revisar
-		"aProcessing": true,//Activamos el procesamiento del datatables
-	    "aServerSide": true,//Paginación y filtrado realizados por el servidor
-	    dom: '<Bl<f>rtip>',//Definimos los elementos del control de tabla
-	    buttons: [		          
-		            'copyHtml5',
+		"lengthMenu": [ 5, 10, 25, 75, 100],
+		"aProcessing": true,
+	    "aServerSide": true,
+	    dom: '<Bl<f>rtip>',
+	    buttons: [	
+					'copyHtml5',
 		            'excelHtml5',
 		            'csvHtml5',
-		            'pdf'
+		            'pdf'	          
 		        ],
 		"ajax":
 				{
@@ -110,8 +110,8 @@ function listar()
             }
         },
 		"bDestroy": true,
-		"iDisplayLength": 5,//Paginación
-	    "order": [[ 0, "desc" ]]//Ordenar (columna,orden)
+		"iDisplayLength": 5,
+	    "order": [[ 0, "desc" ]]
 	}).DataTable();
 }
 //Función para guardar o editar
@@ -119,7 +119,7 @@ function listar()
 function guardaryeditar(e)
 {
 	e.preventDefault(); //No se activará la acción predeterminada del evento
-	//$("#btnGuardar").prop("disabled",true);
+	
 	var formData = new FormData($("#formulario")[0]);
 
 	$.ajax({

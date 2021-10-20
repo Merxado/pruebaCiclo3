@@ -70,13 +70,7 @@ switch ($_GET["op"]){
  		echo json_encode($results);
 
 	break;
-///}
-//Fin de las validaciones de acceso
-//}
-//else
-//{
- // require 'noacceso.php';
-//}
+	
 }
-//ob_end_flush();
+
 ?>

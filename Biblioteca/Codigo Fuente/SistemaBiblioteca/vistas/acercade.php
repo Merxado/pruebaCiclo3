@@ -1,5 +1,4 @@
 <?php
-//Activamos el almacenamiento en el buffer
 ob_start();
 session_start();
 
@@ -11,8 +10,6 @@ else
 {
 require 'header.php';
 ?>
-<!--Contenido-->
-      <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">        
         <!-- Main content -->
         <section class="content">
@@ -24,34 +21,30 @@ require 'header.php';
                           <div class="box-tools pull-right">
                           </div>
                     </div>
-                    <!-- /.box-header -->
-                    <!-- centro -->
                     <div class="panel-body">
                       <h4>Proyecto: </h4> 
                       <p>Biblioteca virtual</p>
                       <h4>Desarrollado por: </h4>
                       <P>Estudiantes de programación</P>
                       <p>Gabriela Cordoba</p>
-                      <p>Email: </p>
+                      <p><a href="mailto:gcordobag2016@gmail.com">Enviar correo</a></p>
                       <p>Grace Güette</p>
-                      <p>Email: </p>
+                      <p><a href="#">Enviar correo</a></p>
                       <p>Juan Guillermo Rios</p>
-                      <p>Email: </p>
+                      <p><a href="#">Enviar correo</a></p>
                       <p>Miguel Amaya</p>
-                      <p>Email: </p>
-                      <p>Norberto Diaz</p>
-                      <p>Email: </p>
+                      <p><a href="mailto:miguelangelamaya31@gmail.com">Enviar correo</a></p>
+                      <p>Norberto Diaz Granados L</p>
+                      <p><a href="mailto:info@norbertodiaz.live">Enviar correo</a></p>
                       <p>David Prada</p>
-                      <p>Email: </p>
+                      <p><a href="mailto:daviyimer1345@outlook.com">Enviar correo</a></p>
                     </div>
-                    <!--Fin centro -->
-                  </div><!-- /.box -->
-              </div><!-- /.col -->
-          </div><!-- /.row -->
-      </section><!-- /.content -->
+                  </div>
+              </div>
+          </div>
+      </section>
 
-    </div><!-- /.content-wrapper -->
-  <!--Fin-Contenido-->
+    </div>
 <?php
 require 'footer.php';
 ?>

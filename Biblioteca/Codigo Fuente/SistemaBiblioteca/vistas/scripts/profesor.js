@@ -9,15 +9,20 @@ function init(){
 	{
 		guardaryeditar(e);	
 	});
-  
+
 }
 
 
 function limpiar()
 {
-	$("#ideditorial").val("");
+	$("#codigo").val("");
+	$("#dni").val("");
 	$("#nombre").val("");
-	$("#descripcion").val("");
+	$("#carrera").val("");
+	$("#direccion").val("");
+	$("#telefono").val("");
+	$("#email").val("");
+	$("#idestudiante").val("");
 }
 
 
@@ -46,6 +51,7 @@ function cancelarform()
 	mostrarform(false);
 }
 
+
 function listar()
 {
 	tabla=$('#tbllistado').dataTable(
@@ -58,7 +64,7 @@ function listar()
 		        ],
 		"ajax":
 				{
-					url: '../ajax/editorial.php?op=listar',
+					url: '../ajax/estudiante.php?op=listar',
 					type : "get",
 					dataType : "json",						
 					error: function(e){
@@ -89,7 +95,7 @@ function guardaryeditar(e)
 	var formData = new FormData($("#formulario")[0]);
 
 	$.ajax({
-		url: "../ajax/editorial.php?op=guardaryeditar",
+		url: "../ajax/estudiante.php?op=guardaryeditar",
 	    type: "POST",
 	    data: formData,
 	    contentType: false,
@@ -106,27 +112,33 @@ function guardaryeditar(e)
 	limpiar();
 }
 
-function mostrar(ideditorial)
+function mostrar(idestudiante)
 {
-	$.post("../ajax/editorial.php?op=mostrar",{ideditorial : ideditorial}, function(data, status)
+	$.post("../ajax/estudiante.php?op=mostrar",{idestudiante : idestudiante}, function(data, status)
 	{
 		data = JSON.parse(data);		
 		mostrarform(true);
 
+		$("#codigo").val(data.codigo);
+		$("#dni").val(data.dni);
 		$("#nombre").val(data.nombre);
-		$("#descripcion").val(data.descripcion);
- 		$("#ideditorial").val(data.ideditorial);
+		$("#carrera").val(data.carrera);
+		$("#carrera").selectpicker('refresh');
+		$("#direccion").val(data.direccion);
+		$("#telefono").val(data.telefono);
+		$("#email").val(data.email);
+ 		$("#idestudiante").val(data.idestudiante);
 
  	})
 }
 
 
-function desactivar(ideditorial)
+function desactivar(idestudiante)
 {
-	bootbox.confirm("¿Está Seguro de desactivar la Categoría?", function(result){
+	bootbox.confirm("¿Está Seguro de desactivar el Estudiante?", function(result){
 		if(result)
         {
-        	$.post("../ajax/editorial.php?op=desactivar", {ideditorial : ideditorial}, function(e){
+        	$.post("../ajax/estudiante.php?op=desactivar", {idestudiante : idestudiante}, function(e){
         		bootbox.alert(e);
 	            tabla.ajax.reload();
         	});	
@@ -135,12 +147,12 @@ function desactivar(ideditorial)
 }
 
 
-function activar(ideditorial)
+function activar(idestudiante)
 {
-	bootbox.confirm("¿Está Seguro de activar Editorial?", function(result){
+	bootbox.confirm("¿Está Seguro de activar el Estudiante?", function(result){
 		if(result)
         {
-        	$.post("../ajax/editorial.php?op=activar", {ideditorial : ideditorial}, function(e){
+        	$.post("../ajax/estudiante.php?op=activar", {idestudiante : idestudiante}, function(e){
         		bootbox.alert(e);
 	            tabla.ajax.reload();
         	});	

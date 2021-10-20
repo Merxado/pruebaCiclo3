@@ -1,6 +1,5 @@
 var tabla;
 
-//Función que se ejecuta al inicio
 function init(){
 	mostrarform(false);
 	listar();
@@ -9,28 +8,27 @@ function init(){
 	{
 		guardaryeditar(e);	
 	});
-	//Cargamos los items al combobox autor
+	
 	$.post("../ajax/libro.php?op=SelectAutor", function(r){
 	            $("#idautor").html(r);
 	            $('#idautor').selectpicker('refresh');
 	});
-	//Cargamos los items al combobox editorial
+	
 	$.post("../ajax/libro.php?op=SelectEditorial", function(r){
 	            $("#ideditorial").html(r);
 	            $('#ideditorial').selectpicker('refresh');
 	});
-	//Cargamos los items al combobox materia
+	
 	$.post("../ajax/libro.php?op=SelectMateria", function(r){
 	            $("#idmateria").html(r);
 	            $('#idmateria').selectpicker('refresh');
 	});
 
 	$("#imagenmuestra").hide();
-//	$('#mAlmacen').addClass("treeview active");
-  //  $('#llibros').addClass("active");
+
 }
 
-//Función limpiar
+
 function limpiar()
 {
 	$("#titulo").val("");
@@ -44,7 +42,7 @@ function limpiar()
 	$("#idlibro").val("");
 }
 
-//Función mostrar formulario
+
 function mostrarform(flag)
 {
 	limpiar();
@@ -63,27 +61,23 @@ function mostrarform(flag)
 	}
 }
 
-//Función cancelarform
+
 function cancelarform()
 {
 	limpiar();
 	mostrarform(false);
 }
 
-//Función Listar
+
 function listar()
 {
 	tabla=$('#tbllistado').dataTable(
 	{
-		"lengthMenu": [ 5, 10, 25, 75, 100],//mostramos el menú de registros a revisar
-		"aProcessing": true,//Activamos el procesamiento del datatables
-	    "aServerSide": true,//Paginación y filtrado realizados por el servidor
-	    dom: '<Bl<f>rtip>',//Definimos los elementos del control de tabla
+		"lengthMenu": [ 5, 10, 25, 75, 100],
+		"aProcessing": true,
+	    "aServerSide": true,
+	    dom: '<Bl<f>rtip>',
 	    buttons: [		          
-		            'copyHtml5',
-		            'excelHtml5',
-		            'csvHtml5',
-		            'pdf'
 		        ],
 		"ajax":
 				{
@@ -105,15 +99,15 @@ function listar()
             }
         },
 		"bDestroy": true,
-		"iDisplayLength": 5,//Paginación
-	    "order": [[ 0, "desc" ]]//Ordenar (columna,orden)
+		"iDisplayLength": 5,
+	    "order": [[ 0, "desc" ]]
 	}).DataTable();
 }
-//Función para guardar o editar
+
 
 function guardaryeditar(e)
 {
-	e.preventDefault(); //No se activará la acción predeterminada del evento
+	e.preventDefault(); 
 	$("#btnGuardar").prop("disabled",true);
 	var formData = new FormData($("#formulario")[0]);
 
@@ -162,7 +156,7 @@ function mostrar(idlibro)
  	})
 }
 
-//Función para desactivar registros
+
 function desactivar(idlibro)
 {
 	bootbox.confirm("¿Está Seguro de desactivar el libro?", function(result){
@@ -176,7 +170,7 @@ function desactivar(idlibro)
 	})
 }
 
-//Función para activar registros
+
 function activar(idlibro)
 {
 	bootbox.confirm("¿Está Seguro de activar el Libro?", function(result){
