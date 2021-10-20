@@ -1,6 +1,6 @@
 var tabla;
 
-//Función que se ejecuta al inicio
+
 function init(){
 	mostrarform(false);
 	listar();
@@ -9,11 +9,9 @@ function init(){
 	{
 		guardaryeditar(e);	
 	});
-    //$('#mAlmacen').addClass("treeview active");
-   // $('#lestudiantes').addClass("active");
+
 }
 
-//Función limpiar
 function limpiar()
 {
 	$("#codigo").val("");
@@ -26,7 +24,7 @@ function limpiar()
 	$("#idestudiante").val("");
 }
 
-//Función mostrar formulario
+
 function mostrarform(flag)
 {
 	limpiar();
@@ -45,14 +43,14 @@ function mostrarform(flag)
 	}
 }
 
-//Función cancelarform
+
 function cancelarform()
 {
 	limpiar();
 	mostrarform(false);
 }
 
-//Función Listar
+
 function listar()
 {
 	tabla=$('#tbllistado').dataTable(
@@ -87,7 +85,7 @@ function listar()
 	    "order": [[ 0, "desc" ]]
 	}).DataTable();
 }
-//Función para guardar o editar
+
 
 function guardaryeditar(e)
 {
@@ -133,7 +131,7 @@ function mostrar(idestudiante)
  	})
 }
 
-//Función para desactivar registros
+
 function desactivar(idestudiante)
 {
 	bootbox.confirm("¿Está Seguro de desactivar el Estudiante?", function(result){
@@ -147,7 +145,7 @@ function desactivar(idestudiante)
 	})
 }
 
-//Función para activar registros
+
 function activar(idestudiante)
 {
 	bootbox.confirm("¿Está Seguro de activar el Estudiante?", function(result){

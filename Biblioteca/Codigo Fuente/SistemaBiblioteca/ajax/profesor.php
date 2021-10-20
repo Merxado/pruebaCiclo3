@@ -35,13 +35,13 @@ switch ($_GET["op"]){
 
 	case 'mostrar':
 		$rspta=$profesor->mostrar($idprofesor);
- 		//Codificar el resultado utilizando json
+ 		
  		echo json_encode($rspta);
 	break;
 
 	case 'listar':
 		$rspta=$profesor->listar();
- 		//Vamos a declarar un array
+ 		
  		$data= Array();
 
  		while ($reg=$rspta->fetch_object()){
@@ -61,9 +61,9 @@ switch ($_GET["op"]){
  				);
  		}
  		$results = array(
- 			"sEcho"=>1, //Información para el datatables
- 			"iTotalRecords"=>count($data), //enviamos el total registros al datatable
- 			"iTotalDisplayRecords"=>count($data), //enviamos el total registros a visualizar
+ 			"sEcho"=>1, 
+ 			"iTotalRecords"=>count($data), 
+ 			"iTotalDisplayRecords"=>count($data), 
  			"aaData"=>$data);
  		echo json_encode($results);
 

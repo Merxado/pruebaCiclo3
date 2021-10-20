@@ -1,6 +1,6 @@
 var tabla;
 
-//Función que se ejecuta al inicio
+
 function init(){
 	mostrarform(false);
 	listar();
@@ -12,7 +12,6 @@ function init(){
 
 }
 
-//Función limpiar
 function limpiar()
 {
 	$("#numero_trabajador").val("");
@@ -28,7 +27,6 @@ function limpiar()
 	$("#idusuario").val("");
 }
 
-//Función mostrar formulario
 function mostrarform(flag)
 {
 	limpiar();
@@ -47,14 +45,13 @@ function mostrarform(flag)
 	}
 }
 
-//Función cancelarform
+
 function cancelarform()
 {
 	limpiar();
 	mostrarform(false);
 }
 
-//Función Listar
 function listar()
 {
 	tabla=$('#tbllistado').dataTable(
@@ -89,7 +86,7 @@ function listar()
 	    "order": [[ 0, "desc" ]]
 	}).DataTable();
 }
-//Función para guardar o editar
+
 
 function guardaryeditar(e)
 {
@@ -136,10 +133,7 @@ function mostrar(idusuario)
 
  	})
 }
-/*
-*Funcion: eliminar
-*Para eliminar un registro
-*/
+
 function eliminarFila(idusuario)
 {
 	bootbox.confirm("¿Está Seguro de eliminar el Usuario?", function(result)
