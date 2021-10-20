@@ -135,7 +135,7 @@ function mostrar(idestudiante)
 
 function desactivar(idestudiante)
 {
-	bootbox.confirm("¿Está Seguro de desactivar el Estudiante?", function(result){
+	bootbox.confirm("¿Está Seguro de desactivar el Profesor?", function(result){
 		if(result)
         {
         	$.post("../ajax/estudiante.php?op=desactivar", {idestudiante : idestudiante}, function(e){
@@ -149,7 +149,7 @@ function desactivar(idestudiante)
 
 function activar(idestudiante)
 {
-	bootbox.confirm("¿Está Seguro de activar el Estudiante?", function(result){
+	bootbox.confirm("¿Está Seguro de activar el Profesor?", function(result){
 		if(result)
         {
         	$.post("../ajax/estudiante.php?op=activar", {idestudiante : idestudiante}, function(e){
