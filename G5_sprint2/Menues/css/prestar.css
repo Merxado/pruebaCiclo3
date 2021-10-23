@@ -1,0 +1,8 @@
+body {
+    height: 700px;
+    background-image:url(https://image.freepik.com/vector-gratis/fondo-pintado-acuarela-pastel_23-2148959637.jpg);
+  background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+    }
+    h1 {text-shadow: 7px 4px 5px rgb(150, 91, 199);}
