@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Stilos  -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>   
+    <br>
+    <h1>Institución Educativa Villa Nueva </h1>
+    <br>
+    <h2>Iniciar Sesión</h2>
+    <script>
+        function usrpas(){
+        if (document.form1.txt.value=="Juan" && document.form1.num.value=="1234"){window.location="index.html"}
+        else {alert("¡Ups! Error en Usuario o Contraseña. Intenta de nuevo.")}
+        }
+        document.oncontextmenu=new Function("return false");
+        </script>
+        <form name="form1">
+        <p class="cursiv">Usuario</p><input type="text" name="txt"> <br> 
+        <p class="cursiv">Contraseña</p><input type="password" name="num"> <br>
+        <input type="button" value="Ingresar" onclick="usrpas()">
+        </form>
+    
+
+</body>
+</html>
